@@ -1,0 +1,17 @@
+Aplikasi : 
+Gambar depan(login) | DONE
+Profil | DONE
+Akun mau ditambah | DONE
+Tampilan layout options sama footer | DONE
+Header Laporan | DONE
+Timezone absen | DONE
+
+
+Bab 3 :
+Diagram dan penjelasan
+
+Akun:
+bangrobin71@gmail.com : 1234
+teguh@gmail.com : teguh123
+user@gmail.com : teguh123
+
