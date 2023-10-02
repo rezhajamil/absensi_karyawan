@@ -72,8 +72,8 @@ function loadLap(id, start, end, divisi) {
 	// 	start: year + month + day,
 	// 	end: year + month2 + "31",
 	// });
-	start = start ?? year + month + day;
-	end = end ?? year + month2 + "31";
+	start = start ? start : year + month + day;
+	end = end ? end : year + month2 + "31";
 	var url = "rekap/ajax_list_laporan/" + id + "/";
 
 	console.log({
