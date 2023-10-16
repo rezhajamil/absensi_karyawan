@@ -5,7 +5,6 @@ if (!defined('BASEPATH'))
 
 class Presensi_model extends CI_Model
 {
-
     public $table = 'presensi';
     public $id = 'id_absen';
     public $order = 'DESC';
@@ -95,7 +94,6 @@ class Presensi_model extends CI_Model
             ->get('presensi')
             ->row();
     }
-
 
     function cek_id($id_karyawan, $tgl)
     {
