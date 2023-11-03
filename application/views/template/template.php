@@ -15,7 +15,7 @@
 
         <?php $this->load->view('template/header'); ?>
         <?php $this->load->view('template/sidebar'); ?>
-        <div class="content-wrapper">
+        <div class="content-wrapper" style="min-height: 100vh;">
             <?php echo $contents; ?>
         </div><!-- /.content-wrapper -->
         <?php $this->load->view('template/footer'); ?>
