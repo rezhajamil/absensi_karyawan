@@ -15,5 +15,5 @@
 <script src="<?php echo base_url() ?>assets/plugins/DataTables/FilterDropdown/filterDropDown.min.js"></script>
 <script src="<?php echo base_url() ?>assets/app/core/dtconfig.js"></script>
 
-<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/plugins/dataTables/responsive/2.2.2/css/responsive.bootstrap.min.css" />
-<script type="text/javascript" src="<?php echo base_url()?>assets/plugins/dataTables/responsive/2.2.2/js/dataTables.responsive.min.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/plugins/dataTables/responsive/2.2.2/css/responsive.bootstrap.min.css" />
+<script type="text/javascript" src="<?php echo base_url() ?>assets/plugins/dataTables/responsive/2.2.2/js/dataTables.responsive.min.js"></script>

@@ -12,6 +12,3 @@
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/app/css/print.css">
 <link rel="stylesheet" href="<?php echo base_url()  ?>assets/plugins/datepicker/datepicker3.css">
 <script src="<?php echo base_url() ?>assets/plugins/jQuery/jQuery-2.1.4.min.js"></script>
-
-
-

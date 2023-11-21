@@ -34,17 +34,17 @@
                             <?php
                             $start = 0;
                             foreach ($jabatan_data as $jabatan) { ?>
-                            <tr>
-                                <td><?php echo ++$start ?></td>
-                                <td><?php echo $jabatan->nama_jabatan ?></td>
-                                <td>
-                                    <?php
-                                        echo anchor(site_url('jabatan/lihat/' . $jabatan->id_jabatan), '<i class="fa fa-eye fa-lg"></i>&nbsp;&nbsp;Lihat', array('title' => 'detail', 'class' => 'btn btn-md btn-success btn3d'));
+                                <tr>
+                                    <td><?php echo ++$start ?></td>
+                                    <td><?php echo $jabatan->nama_jabatan ?></td>
+                                    <td>
+                                        <?php
+                                        // echo anchor(site_url('jabatan/lihat/' . $jabatan->id_jabatan), '<i class="fa fa-eye fa-lg"></i>&nbsp;&nbsp;Lihat', array('title' => 'detail', 'class' => 'btn btn-md btn-success btn3d'));
                                         echo anchor(site_url('jabatan/update/' . $jabatan->id_jabatan), '<i class="fa fa-pencil-square-o fa-lg"></i>&nbsp;&nbsp;Edit', array('title' => 'edit', 'class' => 'btn btn-md btn-warning btn-edit-data btn3d'));
                                         echo anchor(site_url('jabatan/delete/' . $jabatan->id_jabatan), '<i class="fa fa-trash fa-lg"></i>&nbsp;&nbsp;Hapus', 'title="delete" class="btn btn-md btn-danger btn-remove-data btn3d"');
                                         ?>
-                                </td>
-                            </tr> <?php } ?>
+                                    </td>
+                                </tr> <?php } ?>
                         </tbody>
                     </table>
                     <script type="text/javascript">

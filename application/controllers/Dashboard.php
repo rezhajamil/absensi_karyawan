@@ -55,8 +55,8 @@ class Dashboard extends CI_Controller
 			],
 			[
 				'box' 		=> 'red',
-				'total' 	=> $this->dashboard->total('shift'),
-				'title'		=> 'shift',
+				'total' 	=> $this->dashboard->total('divisi'),
+				'title'		=> 'divisi',
 				'icon'		=> 'retweet'
 			],
 		];
