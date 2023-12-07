@@ -21,8 +21,8 @@
                             <td><?php echo $nama_jabatan; ?></td>
                         </tr>
                         <tr>
-                            <td>Shift</td>
-                            <td><?php echo $nama_shift; ?></td>
+                            <td>Divisi</td>
+                            <td><?php echo $nama_divisi; ?></td>
                         </tr>
                         <tr>
                             <td>Lokasi</td>

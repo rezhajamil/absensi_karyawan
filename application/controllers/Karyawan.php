@@ -82,7 +82,7 @@ class Karyawan extends CI_Controller
                 'nama_karyawan' => $row->nama_karyawan,
                 'nama_jabatan' => $row->nama_jabatan,
                 'nama_gedung' => $row->nama_gedung,
-                'nama_shift' => $row->nama_shift,
+                'nama_divisi' => $row->nama_divisi,
                 'user' => $user, 'users'     => $this->ion_auth->user()->row(),
             );
             $this->template->load('template/template', 'karyawan/karyawan_read', $data, $uri);
@@ -109,7 +109,7 @@ class Karyawan extends CI_Controller
             'id_karyawan' => set_value('id_karyawan'),
             'nama_karyawan' => set_value('nama_karyawan'),
             'jabatan' => set_value('jabatan'),
-            'id_shift' => set_value('id_shift'),
+            'id_divisi' => set_value('id_divisi'),
             'gedung_id' => set_value('gedung_id'),
             'id' => set_value('id'),
             'user' => $user, 'users'     => $this->ion_auth->user()->row(),
@@ -122,6 +122,7 @@ class Karyawan extends CI_Controller
         $this->_rules();
         if ($this->form_validation->run() == FALSE) {
             $this->create();
+            // die('a');
         } else {
             $kode = $this->Jabatan_model->get_by_id($this->input->post('jabatan'));
             $kodejbt = $kode->nama_jabatan;
@@ -135,7 +136,7 @@ class Karyawan extends CI_Controller
                 'nama_karyawan' => ucwords($this->input->post('nama_karyawan', TRUE)),
                 'id_karyawan' => $nourut,
                 'jabatan' => $this->input->post('jabatan', TRUE),
-                'id_shift' => $this->input->post('id_shift', TRUE),
+                'divisi' => $this->input->post('id_divisi', TRUE),
                 'gedung_id' => $this->input->post('gedung_id', TRUE),
             );
             $this->Karyawan_model->insert($data);
@@ -172,7 +173,7 @@ class Karyawan extends CI_Controller
                 'id_karyawan' => set_value('id_karyawan', $row->id_karyawan),
                 'nama_karyawan' => set_value('nama_karyawan', $row->nama_karyawan),
                 'jabatan' => set_value('jabatan', $row->jabatan),
-                'id_shift' => set_value('shift', $row->id_shift),
+                'id_divisi' => set_value('divisi', $row->divisi),
                 'gedung_id' => set_value('gedung_id', $row->gedung_id),
                 'user' => $user,
                 'users'     => $this->ion_auth->user()->row(),
@@ -205,7 +206,7 @@ class Karyawan extends CI_Controller
                 'id_karyawan' => $updatekode,
                 'nama_karyawan' => $this->input->post('nama_karyawan', TRUE),
                 'jabatan' => $this->input->post('jabatan', TRUE),
-                'id_shift' => $this->input->post('id_shift', TRUE),
+                'divisi' => $this->input->post('id_divisi', TRUE),
                 'gedung_id' => $this->input->post('gedung_id', TRUE),
             );
 
@@ -236,7 +237,7 @@ class Karyawan extends CI_Controller
     {
         $this->form_validation->set_rules('nama_karyawan', 'nama karyawan', 'trim|required');
         $this->form_validation->set_rules('jabatan', 'jabatan', 'trim|required');
-        $this->form_validation->set_rules('id_shift', 'id_shift', 'trim|required');
+        $this->form_validation->set_rules('id_divisi', 'id_divisi', 'trim|required');
         $this->form_validation->set_rules('id_karyawan', 'id_karyawan', 'trim');
         $this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
     }

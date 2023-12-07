@@ -31,21 +31,22 @@ class Karyawan_model extends CI_Model
 
     function get_all_query()
     {
-        $sql = "SELECT a.id_karyawan,a.nama_karyawan,b.nama_jabatan,c.nama_shift,a.gedung_id
-                from karyawan as a,jabatan as b,shift as c
+        $sql = "SELECT a.id_karyawan,a.nama_karyawan,b.nama_jabatan,c.nama_divisi,a.gedung_id
+                from karyawan as a,jabatan as b,divisi as c
                 where b.id_jabatan=a.jabatan
-                and a.id_shift=c.id_shift";
+                and a.divisi=c.id_divisi";
+
         return $this->db->query($sql)->result();
     }
 
 
     function get_by_id_query($id)
     {
-        $sql = "SELECT a.id_karyawan,a.nama_karyawan,b.nama_jabatan,d.nama_shift,c.nama_gedung
-        from karyawan as a,jabatan as b,gedung as c,shift as d
+        $sql = "SELECT a.id_karyawan,a.nama_karyawan,b.nama_jabatan,d.nama_divisi,c.nama_gedung
+        from karyawan as a,jabatan as b,gedung as c,divisi as d
         where b.id_jabatan=a.jabatan
         and a.gedung_id=c.gedung_id
-        and d.id_shift=a.id_shift
+        and d.id_divisi=a.divisi
         and id=$id";
         return $this->db->query($sql)->row($id);
     }
@@ -53,11 +54,11 @@ class Karyawan_model extends CI_Model
 
     function getData()
     {
-        $this->datatables->select('a.id,a.id_karyawan,a.nama_karyawan,b.nama_jabatan,d.nama_shift,c.nama_gedung')
-            ->from('karyawan as a,jabatan as b,gedung as c,shift as d')
+        $this->datatables->select('a.id,a.id_karyawan,a.nama_karyawan,b.nama_jabatan,d.nama_divisi,c.nama_gedung')
+            ->from('karyawan as a,jabatan as b,gedung as c,divisi as d')
             ->where('b.id_jabatan=a.jabatan')
             ->where('a.gedung_id=c.gedung_id')
-            ->where('d.id_shift=a.id_shift');
+            ->where('d.id_divisi=a.divisi');
         return $this->datatables->generate();
     }
     // get data by id
@@ -66,7 +67,7 @@ class Karyawan_model extends CI_Model
         $this->db->where($this->id, $id);
         return $this->db->get($this->table)->row();
     }
-  
+
 
     // insert data
     function insert($data)

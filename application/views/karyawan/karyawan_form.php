@@ -2,7 +2,7 @@
 <section class='content'>
     <div class='row'>
         <div class='col-xs-12'>
-            <div class='box box-<?=$box;?>'>
+            <div class='box box-<?= $box; ?>'>
                 <div class='box-header  with-border'>
                     <h3 class='box-title'>FORMULIR ANGGOTA</h3>
                 </div>
@@ -37,9 +37,9 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="id_shift" class="control-label">Shift<?php echo form_error('shfit') ?></label>
+                            <label for="id_divisi" class="control-label">Divisi<?php echo form_error('shfit') ?></label>
                             <div class="input-group">
-                                <?php echo cmb_dinamis('id_shift', 'id_shift', 'shift', 'nama_shift', 'id_shift', $id_shift) ?>
+                                <?php echo cmb_dinamis('id_divisi', 'id_divisi', 'divisi', 'nama_divisi', 'id_divisi', $id_divisi) ?>
                                 <span class="input-group-addon">
                                     <span class="fas fa-retweet"></span>
                                 </span>

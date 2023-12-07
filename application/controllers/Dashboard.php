@@ -50,13 +50,13 @@ class Dashboard extends CI_Controller
 			[
 				'box' 		=> 'yellow-active',
 				'total' 	=> $this->dashboard->total('gedung'),
-				'title'		=> 'lokasi',
+				'title'		=> 'Lokasi',
 				'icon'		=> 'building'
 			],
 			[
 				'box' 		=> 'red',
 				'total' 	=> $this->dashboard->total('divisi'),
-				'title'		=> 'divisi',
+				'title'		=> 'Divisi',
 				'icon'		=> 'retweet'
 			],
 		];

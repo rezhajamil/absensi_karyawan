@@ -58,7 +58,7 @@
                                 <th class="all">Kode Karyawan.</th>
                                 <th class="all">Nama Karywan</th>
                                 <th class="desktop">Jabatan</th>
-                                <th class="desktop">Shift</th>
+                                <th class="desktop">Divisi</th>
                                 <th class="desktop">action</th>
                             </tr>
                         </thead>

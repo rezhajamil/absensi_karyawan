@@ -23,7 +23,7 @@
             <div class="box-footer no-padding">
                 <ul class="nav nav-stacked">
                     <li><a href="#">NAMA JABATAN : <?php echo $nama_jabatan; ?> </a></li>
-                    <li><a href="#">SHIFT : <?php echo $nama_shift; ?> </a></li>
+                    <li><a href="#">DIVISI : <?php echo $nama_divisi; ?> </a></li>
                     <li><a href="#">PENEMPATAN : <?php echo $nama_gedung; ?> </a></li>
                 </ul>
             </div>
