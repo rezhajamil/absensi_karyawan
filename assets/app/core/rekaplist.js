@@ -76,11 +76,11 @@ function loadLap(id, start, end, divisi) {
 	end = end ? end : year + month2 + "31";
 	var url = "rekap/ajax_list_laporan/" + id + "/";
 
-	console.log({
-		start,
-		end,
-		divisi,
-	});
+	// console.log({
+	// 	start,
+	// 	end,
+	// 	divisi,
+	// });
 	$.ajax({
 		url: url,
 		type: "GET",

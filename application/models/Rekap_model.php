@@ -283,11 +283,10 @@ class Rekap_model extends CI_Model
     {
         $divisi = isset($_GET['divisi']) ? $_GET['divisi'] : '';
 
-        $this->db->select("a.id_karyawan,a.nama_karyawan,b.nama_jabatan,c.nama_shift,d.nama_gedung,e.id_khd,e.ket
+        $this->db->select("a.id_karyawan,a.nama_karyawan,b.nama_jabatan,d.nama_gedung,e.id_khd,e.ket
         ,g.nama_status,h.nama_divisi");
-        $this->db->from("karyawan as a,jabatan as b, shift as c, gedung as d,presensi as e,kehadiran as f, stts as g,divisi as h");
+        $this->db->from("karyawan as a,jabatan as b, gedung as d,presensi as e,kehadiran as f, stts as g,divisi as h");
         $this->db->where("b.id_jabatan=a.jabatan");
-        $this->db->where("c.id_shift=a.id_shift");
         $this->db->where("a.gedung_id=d.gedung_id");
         $this->db->where("a.id_karyawan=e.id_karyawan");
         $this->db->where("e.id_khd=f.id_khd");
@@ -300,7 +299,8 @@ class Rekap_model extends CI_Model
             // echo "<script>console.log({row:" . json_encode($_GET['divisi']) . "})</script>";
             $this->db->where("a.divisi", $divisi);
         }
-        $this->db->distinct();
+        $this->db->group_by('id_karyawan');
+        // $this->db->distinct();
         $data = $this->db->get('presensi')->result();
         // echo "<script>console.log({datas:" . json_encode($data) . ",divisi:" . json_encode($divisi) . "})</script>";
         return $data;
