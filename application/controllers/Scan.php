@@ -64,7 +64,18 @@ class Scan extends Ci_Controller
 				'id_status' => 2,
 			);
 			$this->Scan->absen_pulang($result_code, $data);
-			$this->session->set_flashdata('messageAlert', $this->messageAlert('success', 'absen pulang'));
+			$this->session->set_flashdata([
+				'messageAlert' => $this->messageAlert('success', 'absen pulang'),
+				'absen' => json_encode([
+					'id_karyawan' => $cek_id->id_karyawan,
+					'nama_karyawan' => $cek_id->nama_karyawan,
+					'nama_jabatan' => $cek_id->nama_jabatan,
+					'jam_msk' => $cek_kehadiran->jam_msk,
+					'jam_klr' => $jam_klr,
+					'tgl' => $cek_kehadiran->tgl,
+					'status' => 2
+				])
+			]);
 			redirect($_SERVER['HTTP_REFERER']);
 		} elseif ($cek_kehadiran && $cek_kehadiran->jam_msk != '00:00:00' && $cek_kehadiran->jam_klr != '00:00:00' && $cek_kehadiran->id_status == 2) {
 			$this->session->set_flashdata('messageAlert', $this->messageAlert('warning', 'sudah absen'));
@@ -79,7 +90,14 @@ class Scan extends Ci_Controller
 				'id_status' => 1,
 			);
 			$this->Scan->absen_masuk($data);
-			$this->session->set_flashdata('messageAlert', $this->messageAlert('success', 'absen masuk'));
+			$this->session->set_flashdata(['messageAlert' => $this->messageAlert('success', 'absen masuk'), 'absen' => json_encode([
+				'id_karyawan' => $cek_id->id_karyawan,
+				'nama_karyawan' => $cek_id->nama_karyawan,
+				'nama_jabatan' => $cek_id->nama_jabatan,
+				'jam_msk' => $jam_msk,
+				'tgl' => $tgl,
+				'status' => 1
+			])]);
 			redirect($_SERVER['HTTP_REFERER']);
 		}
 	}

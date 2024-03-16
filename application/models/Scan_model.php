@@ -6,7 +6,7 @@ class Scan_model extends Ci_Model
     {
         $query_str =
             $this->db->where('id_karyawan', $id_karyawan)
-            ->get('karyawan');
+            ->join('jabatan', 'jabatan.id_jabatan = karyawan.jabatan')->get('karyawan');
         if ($query_str->num_rows() > 0) {
             return $query_str->row();
         } else {
